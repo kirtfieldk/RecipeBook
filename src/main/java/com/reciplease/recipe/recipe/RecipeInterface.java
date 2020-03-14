@@ -1,7 +1,6 @@
-package recipe;
+package com.reciplease.recipe.recipe;
 
-import ingredients.Ingredients;
-import recipe.Recipe;
+import com.reciplease.recipe.ingredients.Ingredients;
 
 import java.util.List;
 import java.util.UUID;

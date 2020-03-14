@@ -1,7 +1,7 @@
-package recipe;
+package com.reciplease.recipe.recipe;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import ingredients.Ingredients;
+import com.reciplease.recipe.ingredients.Ingredients;
 
 import java.util.List;
 import java.util.UUID;

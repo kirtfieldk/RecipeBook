@@ -1,4 +1,4 @@
-package ingredients;
+package com.reciplease.recipe.ingredients;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

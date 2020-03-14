@@ -1,7 +1,10 @@
-package ingredients;
+package com.reciplease.recipe.ingredients;
 
-import recipe.Recipe;
+import com.reciplease.recipe.recipe.Recipe;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class IngredientService implements IngredientInterface {
 
 

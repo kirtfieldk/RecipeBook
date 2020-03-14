@@ -1,6 +1,6 @@
-package ingredients;
+package com.reciplease.recipe.ingredients;
 
-import recipe.Recipe;
+import com.reciplease.recipe.recipe.Recipe;
 
 public interface IngredientInterface {
 

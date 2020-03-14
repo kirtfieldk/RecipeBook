@@ -11,7 +11,7 @@
 	<groupId>com.reciplease</groupId>
 	<artifactId>recipe</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>recipe</name>
+	<name>com.reciplease.recipe.recipe</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
