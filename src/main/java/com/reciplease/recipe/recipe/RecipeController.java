@@ -44,4 +44,8 @@ public class RecipeController {
     public List<Recipe> getRecipeByTitle(@PathVariable("time") double time){
         return recipeService.getRecipeByDuration(time);
     }
+    @DeleteMapping(path="delete/{id}")
+    public Recipe deleteRecipeWithId(@PathVariable("id") UUID id){
+        return recipeService.deleteRecipeById(id);
+    }
 }

@@ -1,7 +1,8 @@
 package com.reciplease.recipe.recipe;
 
+import com.reciplease.recipe.exception.ApiException;
 import com.reciplease.recipe.ingredients.Ingredients;
-import org.springframework.stereotype.Repository;
+import com.reciplease.recipe.recipe.steps.Step;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -30,7 +31,6 @@ public class RecipeService implements RecipeInterface {
     @Override
     public List<Recipe> getRecipeByIngredient(Ingredients ingredient) {
         List<Recipe> temp = recipes;
-
         return null;
     }
 
@@ -44,7 +44,6 @@ public class RecipeService implements RecipeInterface {
     public List<Recipe> getRecipeByTitle(String title) {
         List<Recipe> temp = recipes;
         return temp.stream().filter(recipe -> recipe.getTitle().equalsIgnoreCase(title)).collect(Collectors.toList());
-
     }
 
     @Override
@@ -55,11 +54,45 @@ public class RecipeService implements RecipeInterface {
 
     @Override
     public Recipe updateRecipeById(UUID id, Recipe recipe) {
+        List<Recipe> temp = recipes;
+
         return null;
     }
 
     @Override
     public Recipe deleteRecipeById(UUID id) {
+        List<Recipe> temp = recipes;
+        temp.stream().filter(recipe -> recipe.getId() == id).collect(Collectors.toList());
+        if (!temp.isEmpty()){
+            recipes.remove(temp.get(0));
+            return temp.get(0);
+        }else
+            throw new ApiException("Recipe Not Found");
+    }
+
+    @Override
+    public Recipe addStepToRecipe(UUID id, Step step){
+        List<Recipe> temp = recipes;
+        temp.stream().forEach(recipe -> {
+            if(recipe.getId() == id){
+                recipe.getSteps().set(step.getStep(), step);
+            }
+        });
+        return temp.get(0);
+
+    }
+
+    @Override
+    public Recipe deleteSTepToRecipe(UUID idRecipe, UUID idStep ){
+        List<Recipe> temp = recipes;
+        temp.stream().filter(recipe -> recipe.getId() == idRecipe);
+        if(!temp.isEmpty()){
+            temp.get(0).getSteps().stream().forEach(stepRecipe -> {
+                if(stepRecipe.getId() == idStep){
+                    temp.get(0).getSteps().remove(stepRecipe);
+                }
+            });
+        }
         return null;
     }
 }
